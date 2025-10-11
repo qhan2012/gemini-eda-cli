@@ -142,6 +142,24 @@ Slash commands provide meta-level control over the CLI itself.
 - **`/init`**
   - **Description:** To help users easily create a `GEMINI.md` file, this command analyzes the current directory and generates a tailored context file, making it simpler for them to provide project-specific instructions to the Gemini agent.
 
+- **`/eda`**
+  - **Description:** EDA synthesis commands for hardware design workflows with Yosys integration
+  - **Requirements:** EDA CLI extension must be installed (`npm install -g @google/gemini-cli-eda`)
+  - **Sub-commands:**
+    - **`help`** - Show EDA command help and usage information
+    - **`recipe:init [--force]`** - Create recipes directory and sample synthesis script
+    - **`recipe:list`** - List available recipe files
+    - **`run [script] [--seed N]`** - Run Yosys synthesis with specified script and optional seed
+    - **`baseline:seed`** - Save last synthesis run as baseline for QoR verification
+    - **`verify`** - Compare current synthesis results against saved baseline
+    - **`last`** - Show results and summary of the last synthesis run
+  - **Options:**
+    - `--force` - Overwrite existing files
+    - `--seed N` - Set random seed for synthesis
+    - `--verbose` - Show detailed output
+  - **Example:** `/eda:run recipes/synth_resyn2.ys --seed 1`
+  - **See also:** [EDA Synthesis Tools](../tools/eda-synthesis.md) for detailed documentation
+
 ### Custom Commands
 
 Custom commands allow you to create personalized shortcuts for your most-used prompts. For detailed instructions on how to create, manage, and use them, please see the dedicated [Custom Commands documentation](./custom-commands.md).

@@ -1,0 +1,24 @@
+# Sample Yosys synthesis script for resyn2 optimization
+# This script reads Verilog files from rtl/ and performs synthesis with resyn2
+
+# Read Verilog files from rtl directory
+read_verilog rtl/top.v
+
+# Set top module
+hierarchy -top top
+
+# Synthesize to generic gates
+synth
+
+# Optimize with resyn2 algorithm
+#abc -script +resyn2
+
+# Print statistics
+stat
+
+# Write synthesized netlist
+write_verilog -noattr build/top.synth.v
+
+# Optional: Write JSON netlist for further processing
+# write_json build/top.synth.json
+

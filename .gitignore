@@ -32,6 +32,11 @@ Thumbs.db
 
 # Ignore built ts files
 dist
+packages/*/src/**/*.js
+packages/*/src/**/*.d.ts
+packages/*/src/**/*.js.map
+packages/*/src/**/*.d.ts.map
+!packages/*/src/**/*.test.js
 
 # Docker folder to help skip auth refreshes
 .docker
@@ -47,6 +52,14 @@ packages/cli/src/generated/
 packages/core/src/generated/
 .integration-tests/
 packages/vscode-ide-companion/*.vsix
+
+# Temporary test files
+test-commands.js
+test-eda-repl.js
+test-eda.js
+test-yosys-command.sh
+test-fixtures/
+test-fixtures2/
 
 # GHA credentials
 gha-creds-*.json

@@ -1,0 +1,39 @@
+{
+  "name": "@google/gemini-cli-eda",
+  "version": "0.7.0",
+  "description": "Gemini EDA CLI - Synthesis-only REPL mode for hardware design",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "gemini-eda-v0_1": "./dist/bin/gemini-eda-v0_1.js"
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsc && chmod +x dist/bin/gemini-eda-v0_1.js",
+    "install-global": "./install.sh",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@google/gemini-cli-core": "file:../core"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^3.2.4"
+  },
+  "keywords": [
+    "eda",
+    "synthesis",
+    "yosys",
+    "hardware",
+    "verilog",
+    "gemini"
+  ],
+  "author": "Google LLC",
+  "license": "Apache-2.0"
+}

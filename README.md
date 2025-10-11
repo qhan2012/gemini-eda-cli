@@ -246,6 +246,9 @@ gemini
   - [File System Operations](./docs/tools/file-system.md)
   - [Shell Commands](./docs/tools/shell.md)
   - [Web Fetch & Search](./docs/tools/web-fetch.md)
+- [**EDA CLI Extension**](./packages/eda-cli/README.md) - Hardware design synthesis with Yosys integration
+  - ![EDA CLI Help Command](./docs/assets/eda-help-screenshot.png)
+  - _EDA synthesis commands for deterministic hardware design workflows_
 - [**MCP Server Integration**](./docs/tools/mcp-server.md) - Extend with custom tools.
 - [**Custom Extensions**](./docs/extensions/index.md) - Build and share your own commands.
 

@@ -49,6 +49,7 @@ Gemini CLI's built-in tools can be broadly categorized as follows:
 - **[Web Search Tool](./web-search.md) (`google_web_search`):** For searching the web.
 - **[Multi-File Read Tool](./multi-file.md) (`read_many_files`):** A specialized tool for reading content from multiple files or directories.
 - **[Memory Tool](./memory.md) (`save_memory`):** For saving and recalling information across sessions.
+- **[EDA Synthesis Tools](./eda-synthesis.md):** For hardware design synthesis workflows with Yosys integration, QoR verification, and recipe management.
 
 Additionally, these tools incorporate:
 
