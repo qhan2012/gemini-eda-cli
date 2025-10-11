@@ -60,13 +60,19 @@ brew install gemini-cli
 For hardware synthesis workflows with Yosys integration:
 
 ```bash
-# Install the EDA CLI extension
-npm install -g @google/gemini-cli-eda
+# Clone this repository
+git clone https://github.com/qhan2012/gemini-eda-cli.git
+cd gemini-eda-cli
 
-# Or use the installation script
+# Install dependencies
+npm install
+
+# Install EDA CLI globally using the install script
 cd packages/eda-cli
 ./install.sh
 ```
+
+This will build and install the `gemini-eda-v0_1` command globally.
 
 ## 🚀 Quick Start for EDA Workflows
 
