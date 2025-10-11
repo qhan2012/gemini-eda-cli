@@ -1,4 +1,4 @@
-# Gemini CLI
+# Gemini EDA CLI
 
 [![Gemini CLI CI](https://github.com/google-gemini/gemini-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/google-gemini/gemini-cli/actions/workflows/ci.yml)
 [![Gemini CLI E2E](https://github.com/google-gemini/gemini-cli/actions/workflows/e2e.yml/badge.svg)](https://github.com/google-gemini/gemini-cli/actions/workflows/e2e.yml)
@@ -7,16 +7,24 @@
 
 ![Gemini CLI Screenshot](./docs/assets/gemini-screenshot.png)
 
-Gemini CLI is an open-source AI agent that brings the power of Gemini directly into your terminal. It provides lightweight access to Gemini, giving you the most direct path from your prompt to our model.
+**Gemini EDA CLI** is an open-source AI agent enhanced with specialized EDA (Electronic Design Automation) capabilities for hardware synthesis workflows. Built on Gemini CLI, it brings the power of Gemini directly into your terminal with additional tools for deterministic synthesis, QoR verification, and Yosys integration - providing the most direct path from your hardware design to optimized synthesis results.
 
-## 🚀 Why Gemini CLI?
+## 🚀 Why Gemini EDA CLI?
 
-- **🎯 Free tier**: 60 requests/min and 1,000 requests/day with personal Google account.
-- **🧠 Powerful Gemini 2.5 Pro**: Access to 1M token context window.
-- **🔧 Built-in tools**: Google Search grounding, file operations, shell commands, web fetching.
-- **🔌 Extensible**: MCP (Model Context Protocol) support for custom integrations.
-- **💻 Terminal-first**: Designed for developers who live in the command line.
-- **🛡️ Open source**: Apache 2.0 licensed.
+### **EDA-Specific Features** 🔬
+- **⚡ Hardware Synthesis**: Integrated Yosys support for deterministic synthesis workflows
+- **📊 QoR Verification**: Automated Quality of Results comparison and verification
+- **🎯 Recipe Management**: Template-based synthesis script management
+- **🔢 Seed Control**: Reproducible synthesis runs with seed support
+- **📈 Baseline Tracking**: Compare synthesis metrics against saved baselines
+
+### **Core Gemini CLI Features** 🤖
+- **🎯 Free tier**: 60 requests/min and 1,000 requests/day with personal Google account
+- **🧠 Powerful Gemini 2.5 Pro**: Access to 1M token context window
+- **🔧 Built-in tools**: Google Search grounding, file operations, shell commands, web fetching
+- **🔌 Extensible**: MCP (Model Context Protocol) support for custom integrations
+- **💻 Terminal-first**: Designed for developers who live in the command line
+- **🛡️ Open source**: Apache 2.0 licensed
 
 ## 📦 Installation
 
@@ -45,6 +53,42 @@ brew install gemini-cli
 
 - Node.js version 20 or higher
 - macOS, Linux, or Windows
+- **For EDA features**: [Yosys](https://yosyshq.net/yosys/) installed and available on PATH
+
+### EDA CLI Installation
+
+For hardware synthesis workflows with Yosys integration:
+
+```bash
+# Install the EDA CLI extension
+npm install -g @google/gemini-cli-eda
+
+# Or use the installation script
+cd packages/eda-cli
+./install.sh
+```
+
+## 🚀 Quick Start for EDA Workflows
+
+```bash
+# Start EDA-enhanced CLI
+gemini-eda-v0_1
+
+# Initialize your EDA project
+gemini-eda › /eda:recipe:init
+
+# Run synthesis with a seed
+gemini-eda › /eda:run recipes/synth_resyn2.ys --seed 1
+
+# Save as baseline
+gemini-eda › /eda:baseline:seed
+
+# Run again and verify QoR
+gemini-eda › /eda:run recipes/synth_resyn2.ys --seed 2
+gemini-eda › /eda:verify
+```
+
+For detailed EDA CLI usage, see [EDA CLI Documentation](./packages/eda-cli/README.md) and [Test Guide](./TEST_GUIDE.md).
 
 ## Release Cadence and Tags
 
